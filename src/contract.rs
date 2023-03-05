@@ -86,7 +86,7 @@ pub fn record(
     // let cfg = CONFIG.load(deps.storage)?;
     // ensure_eq!(info.sender, info.sender, ContractError::Unauthorized);
 
-    record.validate()?;
+    // record.validate()?;
 
     // record this in the next available slot
     let id = last_registration(deps.as_ref())? + 1;

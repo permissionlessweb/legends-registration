@@ -1,1 +1,0 @@
-08f4a4b4606fe26bc6ec05751a347d0cc3abda2d4fbf4eda2b7d11c25443e787  legends_registration.wasm
