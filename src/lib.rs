@@ -1,18 +1,18 @@
 #![warn(missing_docs)]
 #![doc(html_logo_url = "../../../uml/logo.png")]
-//! # WYND Governance Decisions Record
+//! # Legends Events guest registrations Record
 //!
 //! ## Description
 //!
-//! We need a project that record the governance decisions to provide transparency.
+//! 
 //!
 //! ## Objectives
 //!
-//! The main goal of the **WYND decisions** is to:
-//!   - Define a way to record the decisions data.
+//! The main goal of the **Legends registrations** is to:
+//!   - Define a way to record the registrations data.
 //!
 
-/// Main Decisions Module
+/// Main registrations Module
 pub mod contract;
 
 /// custom error handler

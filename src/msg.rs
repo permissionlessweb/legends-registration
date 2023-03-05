@@ -22,9 +22,12 @@ pub enum ExecuteMsg {
 pub struct RecordMsg {
     /// Title of the registration
     pub name: String,
-    /// Text email of the registration
+    /// Email address of the registration
     pub email: String,
+    /// Wallet address of the registration
+    pub address: String,
 }
+
 
 impl RecordMsg {
     /// ## Description
@@ -35,11 +38,12 @@ impl RecordMsg {
     /// # Examples
     ///
     /// ```rust
-    /// use wynd_decisions::msg::RecordMsg;
-    /// use wynd_decisions::error::ContractError;
+    /// use legends_registration::msg::RecordMsg;
+    /// use legends_registration::error::ContractError;
     /// let record: RecordMsg = RecordMsg {
     ///     name: String::from("name"),
     ///     email: String::from("email"),
+    ///     address: String::from("address"),
     ///   
     ///    
     /// };
@@ -85,8 +89,10 @@ pub struct RegistrationResponse {
     pub created: u64,
     /// Title of the registration
     pub name: String,
-    /// Text email of the registration
+    /// Email address of the registration
     pub email: String,
+    /// Wallet address of the registration
+    pub address: String,
 }
 
 /// Registration Response list wrapper

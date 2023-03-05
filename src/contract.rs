@@ -94,6 +94,7 @@ pub fn record(
         created: env.block.time.seconds(),
         name: record.name.clone(),
         email: record.email,
+        address: record.address,
     };
     REGISTRATIONS.save(deps.storage, id, &registration)?;
 
@@ -170,6 +171,7 @@ mod tests {
         let record = RecordMsg {
             name: "My awesome registration".to_string(),
             email: "Let's all go to the beach and enjoy the sun!".to_string(),
+            address: "osmo1clpqr4nrk4khgkxj78fcwwh6dl3uw4epasmvnj".to_string(),
         };
         let time1 = 111_222_333;
         let mut env = mock_env();
@@ -181,6 +183,7 @@ mod tests {
         let record2 = RecordMsg {
             name: "One more thing".to_string(),
             email: "John will bring a twelve pack for us all".to_string(),
+            address: "osmo1clpqr4nrk4khgkxj78fcwwh6dl3uw4epasmvnj".to_string(),
         };
         let time2 = 111_444_555;
         let mut env = mock_env();
@@ -194,12 +197,14 @@ mod tests {
             created: time1,
             name: record.name,
             email: record.email,
+            address: record.address,
         };
         let expected2 = RegistrationResponse {
             id: 2,
             created: time2,
             name: record2.name,
             email: record2.email,
+            address: record2.address,
         };
 
         let dec1 = query_registration(deps.as_ref(), 1).unwrap();

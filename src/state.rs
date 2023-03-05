@@ -9,7 +9,7 @@ use cw_storage_plus::{Item, Map};
 pub const CONFIG: Item<Config> = Item::new("config");
 
 /// Desicion Map <Registration ID, Registration>
-pub const REGISTRATIONS: Map<u64, Registration> = Map::new("decisions");
+pub const REGISTRATIONS: Map<u64, Registration> = Map::new("registrations");
 
 /// Configuration
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, JsonSchema)]
@@ -25,8 +25,10 @@ pub struct Registration {
     pub created: u64,
     /// name of the registration
     pub name: String,
-    /// email address of the registration
+    /// Email address of the registration
     pub email: String,
+    /// Wallet address of the registration
+    pub address: String,
 }
 
 impl Registration {
@@ -42,6 +44,7 @@ impl Registration {
             created: self.created,
             name: self.name,
             email: self.email,
+            address: self.address,
         }
     }
 }
